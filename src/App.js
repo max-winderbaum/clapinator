@@ -48,7 +48,7 @@ function App() {
 
   const snackbarStyle = {
     backgroundColor: 'green',
-    borderRadius: 10,
+    borderRadius: 4,
   };
 
   return (
