@@ -26,7 +26,7 @@ function App() {
   };
   const handleFocus = (event) => event.target.select();
 
-  const clapinatedText = textToClapinate.trim().concat(' ').split(/\s/).join(` 👏 `);
+  const clapinatedText = textToClapinate.trim().concat(' ').split(/\s+/).join(` 👏 `);
   const handleCopy = () => {
     copy(clapinatedText);
     showCopySuccess();
