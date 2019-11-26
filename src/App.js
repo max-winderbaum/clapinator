@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import copy from 'copy-to-clipboard';
 import TextField from '@material-ui/core/TextField'
@@ -9,6 +9,13 @@ import SnackbarContent from '@material-ui/core/SnackbarContent';
 function App() {
   const [textToClapinate, setTextToClapinate] = useState('Clap in a tor');
   const [notifyOpen, setNotifyOpen] = React.useState(false);
+  const inputEl = useRef(null);
+
+  useEffect(() => {
+    if (inputEl.current) {
+      inputEl.current.querySelector('input').focus();
+    }
+  }, [inputEl]);
 
   const showCopySuccess = () => {
     setNotifyOpen(true);
@@ -54,7 +61,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <TextField value={textToClapinate} onFocus={handleFocus} onChange={handleTextInput} id="outlined-basic" label="Text to Clapinate" variant="outlined" />
+        <TextField autoFocus ref={inputEl} value={textToClapinate} onFocus={handleFocus} onChange={handleTextInput} id="outlined-basic" label="Text to Clapinate" variant="outlined" />
         <Button onClick={handleCopy} style={buttonStyle} size="large" variant="contained" color="primary">Copy</Button>
       </div>
       <div style={textStyle}>
