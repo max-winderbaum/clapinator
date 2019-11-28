@@ -16,8 +16,7 @@ const style = {
 function About() {
     return (
         <div style={style}>
-            <div>Created by Max Winderbaum</div>
-            <a href="https://maxwinderbaum.com">site</a> | <a href="https://www.linkedin.com/in/maxwinderbaum/">linkedin</a> | <a href="https://blog.maxwinderbaum.com/">blog</a>
+            <div>Created by <a href="https://maxwinderbaum.com">Max Winderbaum</a></div>
         </div>
     );
 }
