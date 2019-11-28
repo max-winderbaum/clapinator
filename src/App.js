@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
+import About from './About';
 import copy from 'copy-to-clipboard';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
@@ -83,6 +84,7 @@ function App() {
       >
         <SnackbarContent message={<span id="message-id">Copied to clipboard!</span>} style={snackbarStyle}></SnackbarContent>
       </Snackbar>
+      <About />
     </div>
   );
 }
