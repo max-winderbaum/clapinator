@@ -2,10 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import About from './About';
 import copy from 'copy-to-clipboard';
+import queryString from 'query-string';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
+
+const emoji = queryString.parse(window.location.search).emoji || `👏`;
 
 function App() {
   const [textToClapinate, setTextToClapinate] = useState('Clap in a tor');
@@ -34,7 +37,7 @@ function App() {
   };
   const handleFocus = (event) => event.target.select();
 
-  const clapinatedText = textToClapinate.trim().concat(' ').split(/\s+/).join(` 👏 `);
+  const clapinatedText = textToClapinate.trim().concat(' ').split(/\s+/).join(` ${emoji} `);
   const handleCopy = (event) => {
     copy(clapinatedText);
     showCopySuccess();
