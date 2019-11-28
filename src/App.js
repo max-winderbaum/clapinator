@@ -34,9 +34,10 @@ function App() {
   const handleFocus = (event) => event.target.select();
 
   const clapinatedText = textToClapinate.trim().concat(' ').split(/\s+/).join(` 👏 `);
-  const handleCopy = () => {
+  const handleCopy = (event) => {
     copy(clapinatedText);
     showCopySuccess();
+    event.preventDefault();
   };
 
   const textStyle = {
@@ -60,10 +61,10 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <form onSubmit={handleCopy}>
         <TextField autoFocus ref={inputEl} value={textToClapinate} onFocus={handleFocus} onChange={handleTextInput} id="outlined-basic" label="Text to Clapinate" variant="outlined" />
         <Button onClick={handleCopy} style={buttonStyle} size="large" variant="contained" color="primary">Copy</Button>
-      </div>
+      </form>
       <div style={textStyle}>
         {clapinatedText}
       </div>
