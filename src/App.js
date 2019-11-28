@@ -73,7 +73,7 @@ function App() {
         style={snackbarStyle}
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'left',
+          horizontal: 'center',
         }}
         open={notifyOpen}
         onClose={handleClose}
