@@ -23,6 +23,12 @@ if (queryEmoji) {
     if (searchEmoji) {
       emoji = searchEmoji.emoji;
     }
+    // Unknown emoji specified in query -- possibly custom! If it starts/finishes with `:`, pass it through as a raw
+    // string, since user may want to paste output into Slack (where the custom emoji is presumably supported).
+    // Otherwise, default to 👏.
+    if (/:.+:/.test(queryEmoji)) {
+      emoji = queryEmoji;
+    }
   }
 }
 
