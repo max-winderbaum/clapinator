@@ -4,10 +4,12 @@ import About from './About';
 import copy from 'copy-to-clipboard';
 import textToEmoji from 'node-emoji';
 import queryString from 'query-string';
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
+import { TextField, Button, Snackbar, SnackbarContent } from '@mui/material';
+
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 const query= queryString.parse(window.location.search);
 
